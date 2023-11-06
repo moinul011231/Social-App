@@ -13,6 +13,8 @@ namespace SocialAPI
             // Add services to the container.
 
             builder.Services.AddControllers();
+            builder.Services.AddCors();
+            builder.Services.AddHttpContextAccessor();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
 
@@ -31,11 +33,11 @@ namespace SocialAPI
                 app.UseSwaggerUI();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
-            app.UseAuthorization();
+            //app.UseAuthorization();
 
-
+            app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().AllowCredentials().WithOrigins("http://localhost:4200")) ;
             app.MapControllers();
 
             app.Run();
