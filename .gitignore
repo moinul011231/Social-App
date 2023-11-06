@@ -1,0 +1,5 @@
+SocialAPI/bin/
+SocialAPI/obj/
+SocialAPI/.vs/
+SocialAPI/appsettings.Development.json
+SocialAPI/appsettings.json
