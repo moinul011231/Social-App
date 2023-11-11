@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SocialAPI.TData;
 using SocialAPI.TEntities;
 
 namespace SocialAPI.Controllers
 {
+    
     public class UsersController : BaseController 
     {
         private readonly TDataContext _context;
@@ -20,7 +22,7 @@ namespace SocialAPI.Controllers
         //    return Ok(users);
         //}
 
-
+     
         [HttpGet]
         public async Task< ActionResult<IEnumerable<AppUser>>> GetUser()
         {
@@ -36,7 +38,7 @@ namespace SocialAPI.Controllers
         //}
 
 
-        [HttpGet("id")]
+        [HttpGet("get-userByid")]
         public async Task<ActionResult<AppUser>> GetUserById(int id)
         {
             var user = await _context.Users.FindAsync(id);
