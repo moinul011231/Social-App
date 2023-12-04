@@ -1,0 +1,30 @@
+.example-card{
+    background-color: black;
+    width: 450px;
+    margin: auto;
+}
+
+.mat_card_action{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mat_card_action > button{
+    margin-left: .5rem;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.mat--form--filed{
+    width: 300px;
+}
+.eye-icon{
+    color: azure;
+}
+
