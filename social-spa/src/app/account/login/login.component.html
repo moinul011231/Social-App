@@ -1,0 +1,55 @@
+<div class="container mt-5">
+    <mat-card class="example-card">
+        <mat-card-content>
+            <mat-tab-group
+            mat-stretch-tabs="false"
+            mat-align-tabs="center"
+            (selectedTabChange)="onTabChange($event)"
+            >
+            <form #myLoginForm="ngForm" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                <mat-tab label="Login">
+                    <div class="login-form">
+                        <mat-form-field 
+                        class="mat--form--filed" 
+                        appearance="outline">
+                        <mat-label>Enter your name</mat-label>
+                        <input type="text" 
+                        matInput 
+                        formControlName="username"
+                        placeholder="MaxUsername" 
+                        required/>
+                        </mat-form-field>
+                        <mat-form-field 
+                        class="mat--form--filed" 
+                        appearance="outline">
+                        <mat-label>Enter your password</mat-label>
+                        <input 
+                        formControlName="password"
+                        matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+    <mat-icon class="eye-icon" matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                        </mat-form-field>
+                       
+
+                    </div>
+                </mat-tab>
+            </form>
+                <mat-tab label="Register">
+
+                </mat-tab>
+            </mat-tab-group>
+        </mat-card-content>
+        <mat-card-actions class="mat_card_action">
+            <a routerLink="/home" mat-raised-button>Cancel</a>
+            <button 
+            *ngIf="!isRegistraionForm"
+            (click)="myLoginForm.ngSubmit.emit()"
+            [disabled]="!loginForm.valid"
+            mat-raised-button>Login</button>
+            <button 
+            *ngIf="isRegistraionForm"
+            mat-raised-button>Register</button>
+
+        </mat-card-actions>
+    </mat-card>
+
+</div>
