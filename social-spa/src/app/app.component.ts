@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component,OnInit } from '@angular/core';
+import { AuthService } from './_services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -9,19 +10,16 @@ import { Component,OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'Social Apps';
   users: any;
-    constructor(private http:HttpClient){}
+    constructor(private authService: AuthService){}
 
     ngOnInit(): void{
-      this.http.get<any>('https://localhost:5001/api/users').subscribe({
-        next:(res) => {
-          this.users = res;
-          console.log(res);
-        },error: (err) => {
-          console.log(err);
-        },complete:() =>{
-          console.log('Request Completed');
-        }
-      })
+      this.setCurrrentUser();
     }
-  
+  setCurrrentUser(){
+    const userString = localStorage.getItem('currentUser');
+
+    if(!userString) return;
+    const user = JSON.parse(userString);
+    this.authService.setCurrrentUser(user);
+  }
 }
