@@ -1,0 +1,22 @@
+<mat-form-field class="mat--form--filed" appearance="outline">
+    <mat-label>{{label}}</mat-label>
+    <input 
+    type="{{types}}" 
+    matInput 
+    [formControl]="control" 
+    placeholder="{{placeholder}}" />
+
+    <a
+    *ngIf="passwordType === 'password'"
+    mat-icon-button
+    matSuffix
+    (click)="onEyeClick(iconHide)"
+    [attr.aria-label] = "'Hide password'"
+    [attr.aria-pressed]="iconHide"
+    >
+        <mat-icon class="eye-icon">
+            {{iconHide? "visibility_off" : "visibility"}}
+        </mat-icon>
+</a>
+</mat-form-field>
+
