@@ -26,6 +26,7 @@ import {MatInputModule} from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 import { TbDatePickerComponent } from './_forms/tb-date-picker/tb-date-picker.component';
 import { TbInputComponent } from './_forms/tb-input/tb-input.component';
 @NgModule({
@@ -57,7 +58,8 @@ import { TbInputComponent } from './_forms/tb-input/tb-input.component';
     MatFormFieldModule,
     MatInputModule,
     MatRadioModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
