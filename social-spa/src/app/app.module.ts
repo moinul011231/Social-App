@@ -29,6 +29,13 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import { TbDatePickerComponent } from './_forms/tb-date-picker/tb-date-picker.component';
 import { TbInputComponent } from './_forms/tb-input/tb-input.component';
+
+import { MemberDetailsComponent } from './members/member-details/member-details.component';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
+import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
+import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
+import { MemberCardComponent } from './members/member-card/member-card.component';
+import { MemberListComponent } from './members/member-list/member-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +47,14 @@ import { TbInputComponent } from './_forms/tb-input/tb-input.component';
     LoginComponent,
     RegisterComponent,
     TbDatePickerComponent,
-    TbInputComponent
+    TbInputComponent,
+
+    MemberDetailsComponent,
+    MemberEditComponent,
+    PhotoEditorComponent,
+    MemberMessagesComponent,
+    MemberCardComponent,
+    MemberListComponent
   ],
   imports: [
     FormsModule,
